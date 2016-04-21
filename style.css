@@ -1,0 +1,100 @@
+body{
+	font-family: Helvetica;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+H1{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 24px;
+	color: #1A9DBA;
+}
+
+H2{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 14px;
+	color: #484949;
+}
+H2:hover{
+	color: #1A9DBA;
+}
+H2:active{
+	color: #1A9DBA;
+}
+
+A{
+	text-decoration: none;
+}
+A:link{
+	color: #000000;
+}
+A:visited{
+	color: #000000;
+}
+A:hover{
+	color: #1A9DBA;
+}
+A:active{
+	color: #1A9DBA;
+}
+
+IMG.smallImage{
+	border: 5px #1A9DBA solid;
+}
+IMG.largeImage{
+	border: 9px #1A9DBA solid;
+}
+
+DIV.movieRoundIcon {
+	border: 9px #FFFFFF solid; // apply border as large image
+	position: relative;
+	display: inline-block;
+	border-radius: 50%;
+	width: 122px;
+	height: 122px;
+}
+DIV.movieRoundIcon:hover{
+	border: 9px #1A9DBA solid;
+}
+DIV.movieRoundIcon:active{
+	border: 9px #1A9DBA solid;
+}
+
+DIV.castRoundIcon {
+	border: 5px #FFFFFF solid;
+	position: relative;
+	display: inline-block;
+	border-radius: 50%;
+	width: 66px;
+	height: 66px;
+	float: left;
+}
+DIV.castRoundIcon:hover{
+	border: 5px #1A9DBA solid;
+}
+DIV.castRoundIcon:active{
+	border: 5px #1A9DBA solid;
+}
+
+DIV.movieListBox {
+	width: 33%;
+	float: left;
+}
+
+DIV.movieDetailBox {
+	width: 66%;
+	float: right;
+}
+
+DIV.movieFlowBox {
+	overflow: hidden;
+}
+DIV.movieEachBox {
+	width: 150px;
+	padding-right: 10px;
+	float: left;
+}
+

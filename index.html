@@ -1,0 +1,76 @@
+<!doctype html>
+<html ng-app="App">
+<head>
+  <meta charset="UTF-8">
+  <title>Elemenum Web UI homework - Naoki Hada</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="Ctrl" >
+  <div width="100%">
+    <div class="movieListBox">
+      <h1>Browse Movies</h1>
+      <hr>
+      <div class="movieFlowBox">
+        <div class="movieEachBox" ng-repeat="movie in movieCollection.parts" align="center">
+          <!-- TODO: Check designer what size is small/large images -->
+          <a ng-click="movieClick(movie)"><div class="movieRoundIcon" style="background: url(http://image.tmdb.org/t/p/w150{{movie.poster_path}}) center center no-repeat;"></div>
+          <h2>{{movie.title}}</h2><br/>
+          <!-- TODO: Replace director name from API data -->
+          <span>James Cameron</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="movieDetailBox">
+      <!-- TODO: Verify designer for below H1. It is not specified on spec sheet. -->
+      <h1>{{selectedMovie.title}}</h1>
+      <hr>
+      <div style="overflow: hidden;">
+        <!-- TODO: Check designer what size is small/large images -->
+        <img src="http://image.tmdb.org/t/p/w500{{selectedMovie.poster_path}}"
+          width="174" height="262" style="float:left; padding-right: 10px; padding-bottom: 10px;"/>
+          <!-- TODO: Verify designer for below H2. It is not specified on spec sheet. -->
+          <h2>Who made it?</h2>
+          <!-- TODO: Replace director, writer, stars name from API data -->
+          <b>Director: </b>James Cameron<br/>
+          <b>Writer: </b>James Cameron, Gale Anne Hurd<br/>
+          <b>Stars: </b>Arnold Schwarzenegger, Michael Biehn, Linda Hamilton, Paul Winfield<br/>
+          <h2>What's it about?</h2>
+          <div>{{selectedMovie.overview}}</div>
+          <span style="float:clear;"/>
+      </div>
+      <h1>Movie credits</h1>
+      <hr>
+
+      <img src="http://image.tmdb.org/t/p/w300{{profilePath}}"
+          style="float:right; padding-left: 10px; padding-bottom: 10px;"/>
+      <div ng-repeat="cast in credits.cast">
+        <!-- TODO: Check designer what size is small/large images -->
+        <!-- TODO: convert to DIV instead of table -->
+        <a ng-click="castClick(cast)" >
+        <table>
+          <tr>
+            <td><div class="castRoundIcon" style="background: url(http://image.tmdb.org/t/p/w75{{cast.profile_path}}) center center no-repeat;"></div></td>
+            <td><b>{{cast.name}}</b><br/>{{cast.character}}</td>
+          </tr>
+        </table>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <span style="float:clear;"/>
+
+<!-- Following is for debug purpose -->
+<!--
+  <hr/>
+  <div>result1: {{ result1 }}</div>
+  <hr/>
+  <div>result2: {{ result2 }}</div>
+  <hr/>
+  <div>result3: {{ result3 }}</div>
+ -->
+
+</body>
+</html>
