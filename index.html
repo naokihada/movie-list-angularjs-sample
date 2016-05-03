@@ -16,7 +16,7 @@
         <div class="movieEachBox" ng-repeat="movie in movieCollection.parts" align="center">
           <!-- TODO: Check designer what size is small/large images -->
           <a ng-click="movieClick(movie)"><div class="movieRoundIcon" style="background: url(http://image.tmdb.org/t/p/w150{{movie.poster_path}}) center center no-repeat;"></div>
-          <h2>{{movie.title}}</h2><br/>
+          <b>{{movie.title}}</b><br/>
           <!-- TODO: Replace director name from API data -->
           <span>James Cameron</span></a>
         </div>
