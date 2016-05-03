@@ -18,12 +18,6 @@ H2{
 	font-size: 14px;
 	color: #484949;
 }
-H2:hover{
-	color: #1A9DBA;
-}
-H2:active{
-	color: #1A9DBA;
-}
 
 A{
 	text-decoration: none;
