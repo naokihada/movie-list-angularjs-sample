@@ -18,25 +18,30 @@
           <a ng-click="movieClick(movie)"><div class="movieRoundIcon" style="background: url(http://image.tmdb.org/t/p/w150{{movie.poster_path}}) center center no-repeat;"></div>
           <b>{{movie.title}}</b><br/>
           <!-- TODO: Replace director name from API data -->
-          <span>James Cameron</span></a>
+          <span>{{movie.release_date}}</span></a>
         </div>
       </div>
     </div>
     <div class="movieDetailBox">
       <!-- TODO: Verify designer for below H1. It is not specified on spec sheet. -->
       <h1>{{selectedMovie.title}}</h1>
+
       <hr>
       <div style="overflow: hidden;">
         <!-- TODO: Check designer what size is small/large images -->
         <img src="http://image.tmdb.org/t/p/w500{{selectedMovie.poster_path}}"
           width="174" height="262" style="float:left; padding-right: 10px; padding-bottom: 10px;"/>
           <!-- TODO: Verify designer for below H2. It is not specified on spec sheet. -->
-          <h2>Who made it?</h2>
+          <h2>Details:</h2>
           <!-- TODO: Replace director, writer, stars name from API data -->
-          <b>Director: </b>James Cameron<br/>
-          <b>Writer: </b>James Cameron, Gale Anne Hurd<br/>
-          <b>Stars: </b>Arnold Schwarzenegger, Michael Biehn, Linda Hamilton, Paul Winfield<br/>
-          <h2>What's it about?</h2>
+          <b>Tagline: </b>{{selectedMovie.tagline}}<br/>
+          <b>Web info: </b><a target="_blank" href="{{selectedMovie.homepage}}">{{selectedMovie.homepage}}</a><br/>
+          <b>Budget: </b>{{selectedMovie.budget}}<br/>
+          <b>Revenue: </b>{{selectedMovie.revenue}}<br/>
+          <b>Popularity: </b>{{selectedMovie.popularity}}<br/>
+          <b>Runtime: </b>{{selectedMovie.runtime}}<br/>
+          <b>Vote: </b>Average = {{selectedMovie.vote_average}}, Count = {{selectedMovie.vote_count}}<br/>
+          <h2>Overview:</h2>
           <div>{{selectedMovie.overview}}</div>
           <span style="float:clear;"/>
       </div>

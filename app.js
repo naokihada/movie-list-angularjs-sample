@@ -29,21 +29,22 @@ app.controller("Ctrl", function($scope, $http) {
     function updateCollection(id){
       var url = buildCollectionUrl(id);
       $http.jsonp(url).then(function(result, status) {
-        // $scope.result1 = JSON.stringify(result); // for debug
+        $scope.result1 = JSON.stringify(result); // for debug
         $scope.movieCollection = result.data;
-        $scope.selectedMovie = result.data.parts[0]; // TODO: better handling
+
+        // $scope.selectedMovie = result.data.parts[0]; // TODO: better handling
       },function(result, status) {
-        // $scope.result1 = 'Failed: Check API key - ' + JSON.stringify(result); // for debug
+        $scope.result1 = 'Failed: Check API key - ' + JSON.stringify(result); // for debug
       });
     }
 
     function updateMovie(id){
       var url = buildMovieUrl(id);
       $http.jsonp(url).then(function(result, status) {
-        // $scope.result2 = JSON.stringify(result); // for debug
-        $scope.data2 = result.data; // TODO: better handling
+        $scope.result2 = JSON.stringify(result); // for debug
+        $scope.selectedMovie = result.data;
       },function(result, status) {
-        // $scope.result2 = 'Failed: Check API key - ' + JSON.stringify(result); // for debug
+        $scope.result2 = 'Failed: Check API key - ' + JSON.stringify(result); // for debug
       });
     }
 
@@ -60,6 +61,7 @@ app.controller("Ctrl", function($scope, $http) {
 
     $scope.movieClick = function(movie) {
       $scope.selectedMovie = movie;
+      updateMovie(movie.id);
       updateCredit(movie.id);
     }
 
@@ -69,6 +71,7 @@ app.controller("Ctrl", function($scope, $http) {
 
     // Initial loading
     updateCollection(528); // 528 = "The Terminator Collection"
+    updateMovie(218);      // 218 = "The Terminator"
     updateCredit(218);     // 218 = "The Terminator"
 
 });
